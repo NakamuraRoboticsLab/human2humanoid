@@ -332,7 +332,7 @@ class LeggedRobot(BaseTask):
 
         self.base_ang_vel[:] = quat_rotate_inverse(self._rigid_body_rot[:, 11, :], self._rigid_body_ang_vel[:, 11, :])
         
-
+        self.clear = torch.zeros((self.num_envs, 3), dtype=torch.float, device=self.device)
         self.projected_gravity[:] = quat_rotate_inverse(self._rigid_body_rot[:, 11, :], self.clear)
 
         self._post_physics_step_callback()
