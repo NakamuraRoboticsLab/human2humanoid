@@ -195,7 +195,7 @@ gym.subscribe_viewer_keyboard_event(viewer, gymapi.KEY_T, "next_batch")
 motion_id = 0
 motion_acc = set()
 env_ids = torch.arange(num_envs).int().to(args.sim_device)
-dict_new = joblib.load("test.pkl")
+dict_new = joblib.load("data/h1/test.pkl")
 while not gym.query_viewer_has_closed(viewer):
     # step the physics
 
